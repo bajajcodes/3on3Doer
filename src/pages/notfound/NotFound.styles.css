@@ -1,0 +1,15 @@
+.place-in-center {
+  display: grid;
+  place-items: center;
+}
+
+.not-found {
+  background-color: var(--white-color);
+  padding: var(--size-13);
+  text-align: center;
+  border: var(--size-3) inset var(--black-color);
+}
+
+.not-found > * {
+  margin-bottom: var(--size-5);
+}
