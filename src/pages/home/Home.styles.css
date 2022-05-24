@@ -1,0 +1,30 @@
+.app-section {
+  display: grid;
+  gap: var(--size-5) var(--size-5);
+  place-items: center;
+  background-color: var(--white-color);
+  padding: var(--size-13);
+  border: var(--size-3) inset var(--black-color);
+  text-align: center;
+}
+
+.app-logo {
+  width: calc(10 * var(--size-9));
+}
+
+.app-name {
+  font-size: calc(3 * var(--size-9));
+  line-height: calc(4 * var(--size-9));
+  font-weight: var(--weight-black);
+}
+
+.app-description {
+  text-align: center;
+  font-size: calc(var(--size-11) + 0.5vw);
+  line-height: var(--size-15);
+}
+
+.home-cta {
+  display: grid;
+  gap: var(--size-5) var(--size-5);
+}
