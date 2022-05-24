@@ -1,0 +1,17 @@
+.header {
+  padding: var(--size-9);
+  display: flex;
+  place-items: center;
+}
+
+.auth-cta {
+  font-weight: var(--weight-bold);
+  font-size: calc(var(--size-9) * 1.15);
+  text-align: center;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.auth-cta:hover {
+  color: var(--logo-color);
+}
