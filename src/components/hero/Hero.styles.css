@@ -1,0 +1,17 @@
+.hero {
+  cursor: pointer;
+  width: max-content;
+  height: max-content;
+}
+
+.hero-logo {
+  vertical-align: text-top;
+  width: calc(var(--size-9) * 4.5);
+  height: auto;
+}
+
+.hero-text {
+  vertical-align: text-top;
+  font-size: var(--size-12);
+  font-weight: var(--weight-black);
+}

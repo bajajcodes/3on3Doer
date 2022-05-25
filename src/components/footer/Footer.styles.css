@@ -1,0 +1,23 @@
+.footer {
+  padding: var(--size-9) var(--size-9) var(--size-13);
+  display: grid;
+  gap: var(--size-9) var(--size-9);
+}
+
+.author-info > * {
+  margin-bottom: var(--size-5);
+}
+
+.author-name {
+  display: grid;
+}
+
+.author-words {
+  line-height: 1.5;
+}
+
+@media (min-width: 500px) {
+  .footer {
+    grid-template-columns: max-content 1fr calc(var(--size-16) * 6.8);
+  }
+}
