@@ -23,8 +23,12 @@
   --size-1: 1px;
   --size-0: 0;
 
+  --var-100: 100%;
+
   --logo-color: #5338ea;
   --complementary-color: #cfea38;
   --white-color: #fff;
   --black-color: #000;
+  --grey-color: #f2f1f1;
+  --red-color: red;
 }
