@@ -1,0 +1,66 @@
+.tasks-main {
+  background-color: var(--logo-color);
+}
+
+.todo {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: var(--size-11) 1fr repeat(2, var(--size-11));
+  gap: var(--size-5) var(--size-5);
+  align-items: center;
+}
+
+.todo-action {
+  color: var(--logo-color);
+  cursor: pointer;
+  background: transparent;
+  border: var(--size-0);
+}
+
+.todo-action > *:first-child {
+  font-size: var(--size-12);
+  fill: var(--red-color);
+}
+
+.todo-action:hover {
+  border: var(--size-0);
+}
+
+.todo-action:active {
+  transform: scale(1.1);
+}
+
+.todo-action-delete:hover span {
+  color: var(--red-color);
+}
+
+.todo-title {
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.todo-title::after {
+  content: "";
+  position: absolute;
+  bottom: var(--size-0);
+  left: var(--size-0);
+  width: 100%;
+  transform: scale(0);
+  height: var(--size-3);
+  background-color: var(--logo-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.todo-title:hover:after {
+  transform: scale(1);
+  transform-origin: bottom left;
+}
+
+.task-done {
+  text-decoration: line-through;
+}
