@@ -1,7 +1,9 @@
 import "./styles/styles.all.css";
+import "react-toastify/dist/ReactToastify.css";
 import { Header, Footer, Navigation, SideBar } from "components";
 import { BrowserRouter } from "react-router-dom";
 import { RouteSwitch } from "./RouteSwitch";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
         <SideBar />
         <Footer />
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 }

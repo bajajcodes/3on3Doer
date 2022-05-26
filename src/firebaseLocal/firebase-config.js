@@ -1,10 +1,10 @@
 const firebaseConfig = {
-  apiKey: "AIzaSyDghSOuaWhAvXaKRPqvpMYCg5wU62ZoIws",
-  authDomain: "doer3on3.firebaseapp.com",
-  projectId: "doer3on3",
-  storageBucket: "doer3on3.appspot.com",
-  messagingSenderId: "962351624115",
-  appId: "1:962351624115:web:a3e1cf738dd2dedf40e5c6",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 function getFirebaseConfig() {
