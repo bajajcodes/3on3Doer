@@ -1,4 +1,4 @@
-import { toast } from "react-toastify";
+import { Toast } from "utils";
 
 const passwordInputInfo = {
   icon: "visibility",
@@ -21,15 +21,7 @@ function authStatusAction(
   }
   if (status === "success") {
     setFormButtonTextState(type);
-    toast.success(message, {
-      position: "top-right",
-      autoClose: 2000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      progress: undefined,
-    });
+    Toast.success(message);
   }
 }
 
@@ -46,6 +38,7 @@ function fillGuestLoginCredentials(setState) {
     ...p,
     email: "guestemail@login.com",
     password: "12345678",
+    name: "Guest Login",
   }));
 }
 

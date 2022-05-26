@@ -3,8 +3,7 @@ import { Hero } from "../hero/Hero";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "features";
-import { toast } from "react-toastify";
-
+import { Toast } from "utils";
 
 function Header() {
   const navigate = useNavigate();
@@ -20,18 +19,13 @@ function Header() {
         </div>
       )}
       {isLoggedIn && (
-        <div className="auth-cta" onClick={() => {
-          toast.info("Logged Out", {
-            position: "top-right",
-            autoClose: 1000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: false,
-            progress: undefined,
-          });
-          dispatch(logout());
-        }}>
+        <div
+          className="auth-cta"
+          onClick={() => {
+            Toast.info("Logged Out");
+            dispatch(logout());
+          }}
+        >
           <span className="material-icons-outlined">logout</span>
           <p>Logout</p>
         </div>

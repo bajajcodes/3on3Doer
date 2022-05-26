@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, NotFound, Login, Signup } from "pages";
+import { Home, NotFound, Login, Signup, Tasks } from "pages";
 import { CheckAuth } from "./CheckAuth";
+import { RequiresAuth } from "./RequiresAuth";
 
 function RouteSwitch() {
   return (
@@ -20,6 +21,14 @@ function RouteSwitch() {
           <CheckAuth>
             <Signup />
           </CheckAuth>
+        }
+      />
+      <Route
+        path="/tasks"
+        element={
+          <RequiresAuth>
+            <Tasks />
+          </RequiresAuth>
         }
       />
       <Route path="*" element={<NotFound />} />

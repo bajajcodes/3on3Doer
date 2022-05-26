@@ -1,0 +1,171 @@
+.modalBackground {
+  position: fixed;
+  z-index: 30;
+  top: var(--size-0);
+  left: var(--size-0);
+  bottom: var(--size-0);
+  width: 100%;
+  backdrop-filter: blur(var(--size-9));
+}
+
+.task-modal {
+  border: var(--size-3) inset var(--black-color);
+  border-radius: var(--size-3);
+  background: var(--white);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 40;
+  position: absolute;
+  padding: var(--size-9);
+  width: calc(var(--size-16) * 7);
+  gap: var(--size-5) var(--size-5);
+}
+
+.task-modal {
+  display: grid;
+  grid-template-columns: var(--var-1fr);
+  grid-template-rows: 0.2fr repeat(2, 2fr) 4.5fr repeat(2, 2fr) max-content;
+  grid-auto-columns: var(--var-1fr);
+  gap: var(--size-5) var(--size-5);
+  grid-auto-flow: row;
+  grid-template-areas:
+    "modal-close"
+    "modal-title"
+    "modal-tag"
+    "modal-description"
+    "modal-time"
+    "modal-empty"
+    "modal-actions";
+}
+
+.task-modal > input,
+.task-modal > textarea,
+.task-modal > select {
+  padding: var(--size-3) var(--size-3) var(--size-5) var(--size-3);
+  background: var(--grey-color);
+  font-size: calc(var(--size-7) * 1.5);
+}
+
+.task-modal > input,
+.task-modal > input:active,
+.task-modal > input:focus,
+.task-modal > textarea,
+.task-modal > textarea:active,
+.task-modal > textarea:focus,
+.task-modal > select,
+.task-modal > select:active,
+.task-modal > select:focus {
+  border: var(--size-0);
+  outline: var(--size-0);
+}
+
+.modal-close {
+  grid-area: modal-close;
+  margin-left: auto;
+  background: transparent;
+  border: var(--size-0);
+  cursor: pointer;
+}
+
+.modal-close:focus,
+.modal-close:active {
+  border: var(--size-0);
+  outline: var(--size-0);
+}
+
+.modal-close:hover {
+  transform: scale(1.1);
+}
+
+.modal-title {
+  grid-area: modal-title;
+}
+
+.modal-tag {
+  grid-area: modal-tag;
+}
+
+.modal-description {
+  grid-area: modal-description;
+}
+
+.modal-time {
+  grid-area: modal-time;
+}
+
+.modal-empty {
+  grid-area: modal-empty;
+  color: var(--red-color);
+  font-size: var(--size-8);
+  font-weight: var(--weight-semibold);
+}
+
+.modal-actions {
+  display: grid;
+  grid-template-columns: var(--var-1fr) var(--var-1fr) var(--var-1fr);
+  grid-template-rows: var(--var-1fr);
+  gap: var(--size-0) var(--size-0);
+  grid-auto-flow: row;
+  grid-template-areas: "modal-action-cancel modal-action-empty modal-action-add";
+  grid-area: modal-actions;
+}
+
+.modal-actions > * {
+  padding: var(--size-3) var(--size-5);
+  border: var(--size-0);
+  font-size: medium;
+  cursor: pointer;
+}
+
+.modal-action-cancel {
+  grid-area: modal-action-cancel;
+  color: var(--logo-color);
+  background: var(--grey-color-bright);
+  border: inherit;
+  border: var(--size-2) solid;
+}
+
+.modal-action-empty {
+  grid-area: modal-action-empty;
+}
+
+.modal-action-add {
+  grid-area: modal-action-add;
+  background: var(--logo-color);
+  color: var(--white-color);
+  border: var(--size-2) solid;
+}
+
+.modal-action-add:hover {
+  background-color: var(--logo-color-bright);
+}
+
+.modal-action-cancel:hover {
+  background-color: var(--bg-color-e1)
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+  color: var(--grey-color-dark);
+  font-size: medium;
+}
+
+textarea {
+  resize: none;
+  line-height: 1.5;
+}
+
+.modal-description::placeholder {
+  vertical-align: top;
+  color: var(--grey-color-dark);
+  font-size: medium;
+}
+
+@media (min-width: 700px) {
+  .task-modal {
+    width: calc(var(--size-16) * 8);
+  }
+}

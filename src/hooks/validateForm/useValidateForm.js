@@ -1,8 +1,10 @@
-import { signupUser, loginUser } from "features";
-import { useDispatch } from "react-redux";
+import { signupUser, loginUser, postTask } from "features";
+import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuid } from "uuid";
 
-function useValidateAuthForm({ formErrorMessage, SetFormErrorMessage }) {
+function useValidateForm({ formErrorMessage, SetFormErrorMessage }) {
   const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
 
   function isFormEntryCorrect(value) {
     if (value.length === 0 || value.trim().length === 0) {
@@ -54,7 +56,22 @@ function useValidateAuthForm({ formErrorMessage, SetFormErrorMessage }) {
     }
   }
 
-  return { validateSignup, validateLogin };
+  function validateModal(event, hideModal, prevTaskInfo) {
+    try {
+      const body = validate(event);
+      hideModal();
+      body["IsDone"] = prevTaskInfo["IsDone"] ? prevTaskInfo["IsDone"] : false;
+      body["DateAdded"] = prevTaskInfo["DateAdded"]
+        ? prevTaskInfo["DateAdded"]
+        : new Date().toDateString();
+      body["_id"] = prevTaskInfo["_id"] ? prevTaskInfo["_id"] : uuid();
+      dispatch(postTask({ taskInfo: body, uid: auth.uid, prevTaskInfo }));
+    } catch (error) {
+      SetFormErrorMessage(error.message);
+    }
+  }
+
+  return { validateSignup, validateLogin, validateModal };
 }
 
-export { useValidateAuthForm };
+export { useValidateForm };

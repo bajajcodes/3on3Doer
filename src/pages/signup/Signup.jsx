@@ -2,7 +2,7 @@ import { FormInput, FormButton } from "components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useValidateAuthForm } from "hooks";
+import { useValidateForm } from "hooks";
 import {
   togglePasswordInputInfo,
   passwordInputInfo,
@@ -19,7 +19,7 @@ function Signup() {
 
   const [primaryFormButtonText, SetPrimaryFormButtonText] = useState("Signup");
 
-  const { validateSignup } = useValidateAuthForm({
+  const { validateSignup } = useValidateForm({
     formErrorMessage,
     SetFormErrorMessage,
   });
