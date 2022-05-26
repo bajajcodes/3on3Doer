@@ -1,1 +1,1 @@
-export { useValidateAuthForm } from "./validateAuthForm/useValidateAuthForm";
+export { useValidateForm } from "./validateForm/useValidateForm";

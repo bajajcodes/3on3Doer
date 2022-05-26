@@ -5,3 +5,5 @@ export {
   signupUser,
   loginUser,
 } from "./auth/authSlice";
+
+export * from "./tasks/tasksSlice";

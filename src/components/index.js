@@ -4,3 +4,5 @@ export { Navigation } from "./navigation/Navigation";
 export { SideBar } from "./sidebar/Sidebar";
 export { FormInput } from "./formInput/FormInput";
 export { FormButton } from "./formButton/FormButton";
+export { Task } from "./task/Task";
+export { TaskModal } from "./taskModal/TaskModal";
