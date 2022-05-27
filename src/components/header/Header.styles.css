@@ -2,6 +2,7 @@
   padding: var(--size-9);
   display: flex;
   place-items: center;
+  flex-wrap: wrap;
 }
 
 .auth-cta {

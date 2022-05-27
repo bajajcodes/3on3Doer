@@ -1,0 +1,38 @@
+.circular-progress {
+  position: relative;
+  height: calc(var(--size-13) * 8);
+  width: calc(var(--size-13) * 8);
+  background-color: var(--logo-color);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: auto;
+}
+
+.circular-progress:before {
+  content: "";
+  position: absolute;
+  height: 84%;
+  width: 84%;
+  background-color: var(--white-color);
+  border-radius: 50%;
+}
+
+.value-container {
+  position: relative;
+  color: var(--logo-color-dark);
+  display: grid;
+  place-items: center;
+}
+
+.value-container > *:first-child {
+  margin-bottom: var(--size-5);
+  font-weight: var(--weight-bold);
+}
+
+@media (min-width: 700px) {
+  .circular-progress {
+    width: calc(var(--size-15) * 7.5);
+    height: calc(var(--size-15) * 7.5);
+  }
+}

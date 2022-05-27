@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { postTask, getTasks, deleteTask } from "./thunks.tasksSlice";
+import { postTask, getTask, getTasks, deleteTask } from "./thunks.tasksSlice";
 import {
   initialState,
   thunkFulFilled,
@@ -35,6 +35,16 @@ const tasksSlice = createSlice({
     [postTask.rejected]: (state, action) => {
       thunkRejected(state, action);
     },
+    [getTask.pending]: (state) => {
+      thunkLoading(state);
+    },
+    [getTask.fulfilled]: (state, action) => {
+      const task = action.payload;
+      thunkFulFilled(state, "Task Retrieved Successfully", task, state.tasks);
+    },
+    [getTask.rejected]: (state, action) => {
+      thunkRejected(state, action, {}, state.tasks);
+    },
     [getTasks.pending]: (state) => {
       thunkLoading(state);
     },
@@ -62,4 +72,4 @@ const tasksSlice = createSlice({
 
 const tasksReducer = tasksSlice.reducer;
 
-export { tasksReducer, postTask, getTasks, deleteTask };
+export { tasksReducer, postTask, getTask, getTasks, deleteTask };

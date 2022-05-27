@@ -11,7 +11,7 @@ function Task({ taskInfo, options }) {
   const auth = useSelector((state) => state.auth);
 
   function navigateToPomodoroClock() {
-    navigate(`/pomodoro/${taskInfo.id}`);
+    navigate(`/pomodoro/${taskInfo._id}`);
   }
 
   function showModal() {

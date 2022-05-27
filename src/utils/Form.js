@@ -34,12 +34,19 @@ function togglePasswordInputInfo(state, setState) {
 }
 
 function fillGuestLoginCredentials(setState) {
+  const guestCredentials = getGuestLoginCredentials();
   setState((p) => ({
     ...p,
+    ...guestCredentials,
+  }));
+}
+
+function getGuestLoginCredentials() {
+  return {
     email: "guestemail@login.com",
     password: "12345678",
     name: "Guest Login",
-  }));
+  };
 }
 
 export {
@@ -47,4 +54,5 @@ export {
   passwordInputInfo,
   authStatusAction,
   fillGuestLoginCredentials,
+  getGuestLoginCredentials,
 };

@@ -22,12 +22,13 @@ function Home() {
             <button className="primary-cta" onClick={() => navigate("/tasks")}>
               Finish Tasks
             </button>
-            <button
+            {/* Demo Button Disabled: Because No Proper Logic For Showing Demo */}
+            {/* <button
               className="secondary-cta"
               onClick={() => navigate("/pomodoro")}
             >
               Checkout Demo
-            </button>
+            </button> */}
           </div>
         </section>
       </main>
