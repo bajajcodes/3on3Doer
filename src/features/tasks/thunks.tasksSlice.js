@@ -60,4 +60,24 @@ const deleteTask = createAsyncThunk(
   }
 );
 
-export { postTask, getTasks, deleteTask };
+const getTask = createAsyncThunk(
+  "thunk/getTask",
+  async ({ uid, taskId }, { rejectWithValue }) => {
+    try {
+      checkUID(uid);
+      const usersRef = doc(db, "users", uid);
+      const querySnapshot = await getDoc(usersRef);
+      const task = querySnapshot
+        .data()
+        .tasks.find((task) => task._id === taskId);
+      if (!task) {
+        throw new Error("Task Does Not Exists for Id:" + taskId);
+      }
+      return task;
+    } catch (error) {
+      return rejectWithValue(error.message ?? "Error message NA");
+    }
+  }
+);
+
+export { postTask, getTasks, getTask, deleteTask };
