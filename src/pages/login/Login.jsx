@@ -1,14 +1,16 @@
 import { FormInput, FormButton } from "components";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useValidateForm } from "hooks";
 import {
   togglePasswordInputInfo,
   passwordInputInfo,
   authStatusAction,
   fillGuestLoginCredentials,
+  getGuestLoginCredentials,
 } from "utils";
+import { loginUser } from "features";
 
 function Login() {
   const [passwordInfo, setPasswordInfo] = useState(passwordInputInfo);
@@ -28,6 +30,7 @@ function Login() {
   });
 
   const auth = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     authStatusAction(
@@ -42,7 +45,6 @@ function Login() {
   function togglePasswordInfo() {
     togglePasswordInputInfo(passwordInfo, setPasswordInfo);
   }
-
 
   return (
     <main className="main">
@@ -82,9 +84,12 @@ function Login() {
         <section className="auth-guest-wrapper">
           <button
             className="secondary-cta"
-            onClick={() => fillGuestLoginCredentials(setUserInfo)}
+            onClick={() => {
+              fillGuestLoginCredentials(setUserInfo);
+              dispatch(loginUser(getGuestLoginCredentials()));
+            }}
           >
-            Fill Test Credentials
+            Guest Login
           </button>
           <div className="alternative-auth-help">
             <span>New to 3on3 Doer?</span>
