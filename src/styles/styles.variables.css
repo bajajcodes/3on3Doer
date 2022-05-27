@@ -28,6 +28,7 @@
 
   --logo-color: #5338ea;
   --logo-color-bright:#5338eaab;
+  --logo-color-dark:#231c3d;
   --complementary-color: #cfea38;
   --white-color: #fff;
   --black-color: #000;
@@ -36,4 +37,9 @@
   --grey-color-dark: #aeaeae;
   --bg-color-e1:#e1e0e0;
   --red-color: red;
+  --restart-btn-color:#f7c15d;
+  --restart-btn--bright-color:#f7c15d;
+  --restart-btn-border-color:#eaac38;
+  --muted-text:#aba9a9;
+  --var-bg-cta-restart:#f3e0be;
 }
