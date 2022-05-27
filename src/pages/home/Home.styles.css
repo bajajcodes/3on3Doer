@@ -6,6 +6,7 @@
   padding: var(--size-13);
   border: var(--size-3) inset var(--black-color);
   text-align: center;
+  height: 100%;
 }
 
 .app-logo {
