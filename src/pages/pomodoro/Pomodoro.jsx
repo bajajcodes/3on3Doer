@@ -1,5 +1,5 @@
 import "./Pomodoro.styles.css";
-import { PomodoroClock } from "components";
+import { PomodoroClock, Loader } from "components";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -157,9 +157,7 @@ function Pomodoro() {
           </section>
         </section>
       )}
-      {status === "loading" && !taskInfo && (
-        <h1 className="pomodoro-body">Loading...</h1>
-      )}
+      {status === "loading" && !taskInfo && <Loader message={"Loading..."} />}
     </main>
   );
 }

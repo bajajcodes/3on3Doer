@@ -94,7 +94,7 @@ function TaskModal({ options }) {
         <input
           type="number"
           className="modal-time"
-          placeholder="Add Time"
+          placeholder="Add Minutes"
           min="15"
           max="60"
           step="5"

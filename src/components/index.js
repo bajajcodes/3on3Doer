@@ -7,3 +7,4 @@ export { FormButton } from "./formButton/FormButton";
 export { Task } from "./task/Task";
 export { TaskModal } from "./taskModal/TaskModal";
 export { PomodoroClock } from "./pomodoroClock/PomodoroClock";
+export { Loader } from "./loader/Loader";

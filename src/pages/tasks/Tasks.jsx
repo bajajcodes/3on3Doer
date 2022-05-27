@@ -1,5 +1,5 @@
 import "./Tasks.styles.css";
-import { Task, TaskModal } from "components";
+import { Task, TaskModal, Loader } from "components";
 import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getTasks } from "features";
@@ -89,11 +89,15 @@ function Tasks() {
                 }}
               />
             ))}
-          {status === "loading" && tasks.length === 0 && <h1>{message}</h1>}
+          {status === "loading" && tasks.length === 0 && (
+            <Loader message={message} />
+          )}
           {status === "success" && filteredTasks.length === 0 && (
             <h1>No Tasks Found</h1>
           )}
-          {status === "loading" && tasks.length !== 0 && <h1>Loading</h1>}
+          {status === "loading" && tasks.length !== 0 && (
+            <Loader message={message} />
+          )}
         </section>
       </section>
       <TaskModal

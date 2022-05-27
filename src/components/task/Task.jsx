@@ -47,7 +47,7 @@ function Task({ taskInfo, options }) {
         onClick={() => toggleTaskStatus()}
       >
         {!taskInfo.IsDone && (
-          <span className="material-icons-outlined">done</span>
+          <span className="material-icons-outlined">add_task</span>
         )}
         {taskInfo.IsDone && (
           <span className="material-icons-outlined">remove_done</span>
