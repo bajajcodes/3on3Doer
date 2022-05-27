@@ -54,6 +54,7 @@ function Pomodoro() {
           uid,
         })
       );
+      Toast.success(`Task: ${taskInfo.Title} is Finished`);
     }
     // * Reset task status to not done
     else if (!pomodoroInfo.done && pomodoroInfo.restart) {
@@ -64,6 +65,7 @@ function Pomodoro() {
           uid,
         })
       );
+      Toast.warning(`Task: ${taskInfo.Title} is Restarted`);
     }
   }, [pomodoroInfo]);
 

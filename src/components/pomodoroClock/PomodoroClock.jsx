@@ -1,6 +1,7 @@
 import "./PomodoroClock.styles.css";
 import { useEffect, useState, useRef } from "react";
 import { computeClockProgress } from "./PomodoroClock.helpers";
+import { Toast } from "utils";
 
 function PomodoroClock({ time, info, setTaskIsDone, timerIdRef }) {
   const TOTAL_TIME = time * 60;
@@ -21,8 +22,10 @@ function PomodoroClock({ time, info, setTaskIsDone, timerIdRef }) {
   useEffect(() => {
     if (info.start && !info.done && !timerIdRef.current) {
       startTimer();
+      Toast.info("Task Started");
     } else if (info.pause && timerIdRef.current) {
       pauseTimer();
+      Toast.info("Task Paused");
     } else if (info.restart) {
       restartTimer();
     }
