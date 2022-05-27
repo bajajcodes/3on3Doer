@@ -39,7 +39,6 @@ function Task({ taskInfo, options }) {
     Toast.warning("Task Deleted");
   }
 
-
   return (
     <div className="todo">
       <button
