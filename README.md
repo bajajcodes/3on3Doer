@@ -1,9 +1,7 @@
 # 3on3Doer
-
 Pomodoro app which helps to finish tasks, not getting started with tasks.
 
 ## Tech Used
-
 - Application: React
 - State Management: Redux ToolKit
 - Routing: React Router
@@ -12,19 +10,15 @@ Pomodoro app which helps to finish tasks, not getting started with tasks.
 - Testing: Not Done
 
 ## Package Used
-
 - react-toastify - to show toast text for actions completion
 
 ## Features
-
 - Authentication:
-
   - User Signup
   - User Login (Email, Password OR Login as Guest User)
   - Logout
 
 - Public Routes:
-
   - Landing Page
   - Login
   - Signup
@@ -46,18 +40,17 @@ Pomodoro app which helps to finish tasks, not getting started with tasks.
 ## Responsive [✅]
 
 ## Video Preview
+https://user-images.githubusercontent.com/29247011/170702976-676ebdf6-99e4-433c-b5af-00b0cc7816ca.mp4
 
 ## Get app from here 👇
-
 [3 on 3 Doer](https://3on3doer.netlify.app/)
 
 ## How to run app locally
-
 - Clone the repository
   - On Terminal change directory to `3on3 Doer` directory.
   - Add .env file to the root directory
   - Place all your app related keys from the created firebase project and place it in the .env as below
-  - ```
+   ```
     REACT_APP_API_KEY=<your key>
     REACT_APP_AUTH_DOMAIN=<your domain>
     REACT_APP_PROJECT_ID=<your project id>
@@ -69,7 +62,6 @@ Pomodoro app which helps to finish tasks, not getting started with tasks.
   - Project is running locally.
 
 ## Contribution
-
 - For folder naming convention follow camelCase naming
   convention.
 - For components and pages follow PascalCase naming
@@ -80,5 +72,4 @@ Pomodoro app which helps to finish tasks, not getting started with tasks.
 - For rest, except css use camelCase convention.
 
 ## Mention
-
 - [Coding Artist: Circular Progress Bar](https://www.youtube.com/watch?v=YDgw6HjMCoQ)
